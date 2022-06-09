@@ -61,7 +61,7 @@ export default () => {
         ))}
       </Lists>
       <footer>
-        Feito por Enzo Yuji Wu com React
+        Feito por Enzo Yuji Wu com React e styled Components
       </footer>
       
       {movieList.length <= 0 &&
