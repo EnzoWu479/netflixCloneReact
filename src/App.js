@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { GlobalStyle } from './components/globalStyle';
+import { GlobalStyle } from './components/GlobalStyle';
 import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie';
@@ -22,7 +22,7 @@ const Loading = styled.section`
   align-items: center;
 `;
 
-export default () => {
+const App = () => {
   const [movieList, setMovieList] = useState([]);
   const [FeaturedData, setFeaturedData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
@@ -35,7 +35,7 @@ export default () => {
       let chosen = originals[0].items.results[randomChosen];
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
       setFeaturedData(chosenInfo);
-    }
+    };
     loadAll();
   }, [])
 
@@ -72,3 +72,4 @@ export default () => {
     </div>
   );
 };
+export default App;
