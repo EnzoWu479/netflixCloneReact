@@ -8,11 +8,11 @@ Um clone da Netflix feito a partir de React seguindo o tutorial do canal
   
 ##
 
-<div>
+<div align="center" style="display: inline_block">
   
-<a href="https://enzowu479.github.io/netflixCloneReact/siteStatic/">Site Hospedado<a/>
+  <a href="https://enzowu479.github.io/netflixCloneReact/siteStatic/" target="_blank">Site Hospedado<a/>
   
-<a href="https://github.com/EnzoWu479">GitHub<a/>
+  <a href="https://github.com/EnzoWu479" target="_blank">GitHub<a/>
   
-<a href="https://www.linkedin.com/in/enzo-wu-41b2ba22a/">Linkedin<a/>
+  <a href="https://www.linkedin.com/in/enzo-wu-41b2ba22a/" target="_blank">Linkedin<a/>
 <div/>
