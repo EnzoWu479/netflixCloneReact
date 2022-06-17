@@ -4,23 +4,7 @@ import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header';
-import styled from 'styled-components';
-
-const Lists = styled.section`
-  margin-top: -150px;
-`;
-const Loading = styled.section`
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import { Lists, Loading } from './styledApp';
 
 const App = () => {
   const [movieList, setMovieList] = useState([]);
@@ -31,9 +15,14 @@ const App = () => {
       let list = await Tmdb.getHomeList();
       setMovieList(list)
       let originals = list.filter(i=>i.slug === 'originals');
-      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1));
-      let chosen = originals[0].items.results[randomChosen];
-      let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
+      let randomChosen;
+      let chosen;
+      let chosenInfo;
+      do{
+        randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1));
+        chosen = originals[0].items.results[randomChosen];
+        chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
+      }while(chosenInfo.backdrop_path === null);
       setFeaturedData(chosenInfo);
     };
     loadAll();

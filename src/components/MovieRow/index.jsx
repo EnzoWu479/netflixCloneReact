@@ -46,7 +46,7 @@ const MovieRow = ({title, items}) => {
                 }}>
                     {items.results.length > 0 && items.results.map((item, key) => (
                         <Item key={key}>
-                            <Imagem src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} alt={item.original_title}/>
+                            <Imagem src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} alt={item.original_title} />
                         </Item>
                     ))}
                 </Lista>
