@@ -12,7 +12,7 @@ import {
 } from "./styled";
 
 
-const MovieRow = ({title, items}) => {
+const MovieRow = ({title, items, mudarFeatured}) => {
     const [scrollX, setScrollX] = useState(0);
     const handleLeftArrow = () => {
         let x = scrollX + Math.round(window.innerWidth / 2);
@@ -45,7 +45,7 @@ const MovieRow = ({title, items}) => {
                     marginLeft: scrollX
                 }}>
                     {items.results.length > 0 && items.results.map((item, key) => (
-                        <Item key={key}>
+                        <Item key={key} onClick={() => (mudarFeatured(item))}>
                             <Imagem src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} alt={item.original_title} />
                         </Item>
                     ))}
